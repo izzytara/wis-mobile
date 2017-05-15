@@ -1,0 +1,1156 @@
+@media screen and (min-device-width:1080px) {
+
+    /*------
+    Base styles
+    ---------*/
+
+    body {
+        font-family: 'Asap', sans-serif;
+        margin: 0;
+        padding: 0; 
+        background-color: #b8d6e7;
+
+        /*font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;*/
+    }
+
+    h1, h2, h3, h4 {
+        color:#2D6662;
+    }
+
+    h1 {
+
+    }
+
+    h2 {
+
+    }
+
+    p {
+
+    }
+
+    a:link {
+        font-family: 'Asap', sans-serif;
+    }
+
+    a:visited {
+
+    }
+
+    a:focus {
+
+    }
+
+    a:hover {
+
+    }
+
+    a:active{
+
+    }
+
+    /*---------------------
+    Layout syles
+    ----------------------*/
+    .nav-bar {
+        font-family: 'Asap', sans-serif;
+        height: auto;
+        color: #888F91;
+        background-color: #fff;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999        
+    }
+
+    .content {
+        font-family: 'Asap', sans-serif;
+        padding: 1em 1.25em;
+        margin:6em 0 0 0;
+        background-color: #b8d6e7;    
+    }
+
+    .footer {
+        font-family: 'Asap', sans-serif;
+        height: 5em;
+        color: #888F91;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .container {
+        font-family: 'Asap', sans-serif;
+        max-width: 75em;
+        margin: 0 auto;
+        padding: 0;  
+    }
+
+    /*-------Green container--------*/
+    .green {
+        background-color: #01b6c6;
+        color: white;   
+    }
+
+    /*-------White container--------*/
+    .white {
+        background-color: white;
+        color:black;
+    }
+
+    /*-------Center div--------*/
+    .center {
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    /*-------Center text--------*/
+    .tcenter {
+        text-align: center;
+    }
+
+    .right{
+        float: right;
+    }
+
+    .left{
+        float: left;
+    }
+
+    /* --------------------
+    Nav-bar
+    -----------------------*/
+    .nav {
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .nav a {
+        font-family: 'Asap', sans-serif;
+        font-size: 1.15em;
+        display:inline-block;
+        padding: .7em 1.25em;
+        color: #888F91;
+        text-decoration: none;
+    }
+    
+
+    .nav a:link {
+
+    }
+
+    .topnav a:visited {
+
+    }
+
+    .topnav a:focus{
+
+    }
+
+    .topnav a:hover {
+
+    }
+
+    .topnav a:active {
+
+    }
+    
+    
+    
+    .topnav .navicon {
+        display: none;
+    }
+
+    /*-------Logo img on nav-bar --------*/
+    .navbar-brand {
+      padding: 0;
+    }
+
+    .navbar-brand>img {
+      height: 120%;
+      width: auto;
+      vertical-align: middle;
+    }
+
+    /* --------------------
+    Login form styles
+    -----------------------*/
+    form {
+        font-family: 'Asap', sans-serif;
+        border: .25em solid #f1f1f1;
+        padding: .7em 1.25em;
+    }
+
+    input[type=text],input[type=password]{
+        width: 100%;
+        padding: .5em 1em;
+        margin: .25em .1em;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .loginform{
+        padding: .5em 5em;
+    }
+
+    .login button{
+        margin: .5em 3em;
+    }
+
+    .modal {
+        display: none; /*hidden by defaulty*/
+        position: fixed; 
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /*enable scroll if needed*/
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 5em; 
+    }
+
+    .modal-content {
+        max-width: 40em;
+        margin: 5em auto; 
+    }
+
+    .close {
+        position: absolute;
+        right: 2.5em;
+        top: 0;
+        color: #000;
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    .close: hover, .close: focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+
+    /* --------------------
+    Swiper styles
+    -----------------------*/
+    .swiper-wrapper{
+        margin: 1em 0;
+        padding: 1.5em 0;
+    }
+
+    /* --------------------
+    Button styles
+    -----------------------*/
+    .button {
+        margin: .5em 0;
+    }
+
+    .btn{
+        margin: 0.5em 0;
+        background-color: #F0FBFA ;
+        color: #01b6c6;
+        border-color: #222;
+        display: inline-block;
+        padding: .75em 1.5em;
+        margin-bottom: 0;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: .2em;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        color: #fff;
+        background-color: #A9DBE6;
+    }
+
+    .btn:focus {
+
+    }
+
+    .btn:active {
+
+    }
+
+    .icon-style{
+        margin: 0 0.5em;
+    }
+
+    /* --------------------
+    Image styles
+    -----------------------*/
+    .img-responsive { max-width: 100%; }
+
+    img {
+        text-align: center; 
+    }
+
+    .imgcontainer {
+        text-align: center;
+        position: relative;
+    }
+
+    .imgSize280 {
+            text-align: center;
+            width: 70em;
+            border: 0.125em solid white;
+            box-shadow: 0em 0.125em 0.25em rgba(205, 205, 205, 0.7);
+            -moz-box-shadow: 0em 0.125em 0.25em rgba(205, 205, 205, 0.7);
+            -webkit-box-shadow: 0em 0.125em 0.25em rgba(205, 205, 205, 0.7);
+    }
+
+    /* --------------------
+    Popular works styles
+    -----------------------*/
+   
+
+    #popular-works{
+        margin: 2em auto;
+        max-height: 40em;
+        vertical-align: middle;
+    }
+
+    .diary-display{ padding-top: 1em;}
+
+    .photo {
+        width: 40%;
+        height: 100%;
+        float: left;
+    }
+
+    .photo>img{
+        width:100%;
+        max-height:35em;    
+    }
+
+    .diary {
+        width:60%;
+        height: inherit;
+        float:right;
+        display: inline-block;
+    }
+
+    .location {
+        display: block;
+        float: right;  
+    }
+
+    .title {
+        padding: 0 1.25em;
+        width:100%;
+        display: block;
+        clear:both;
+        font-size: 1.2em;
+    }
+
+    .author-date{
+        padding: 0 1.25em;
+        display: block;
+        float:left;
+        font-style: italic;
+        font: blue;   
+    }
+
+    .text{
+        padding: 0 1.25em;
+        width:100%;
+        white-space: normal;
+        word-wrap: break-word;
+        display: block;
+        clear:both;      
+    }
+
+    .vote-like{
+        display: block;
+        clear: both;
+        text-align: center;
+    }
+
+    .vote-like span{
+        margin: .25em 1em;
+    }
+    
+    #vote-like-confirm .modal-content{
+        max-width: 20em;
+        height: auto;
+        padding: 2em 0 0 0;
+    }
+
+    /* --------------------
+    Start to design diary styles
+    -----------------------*/
+
+    .design-form {
+        border: none;
+    }
+    .progress-bar{
+        text-align: center;
+    }
+
+    .progress-bar img{
+        width: 40em;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .design-outside{
+        padding: 3em 0;
+        position: relative;
+    } 
+
+    .design-inside{
+        width:40.2em;
+        height:28.2em;
+    }
+
+    #step1 .design-inside{
+        border: .1em solid white;
+    }
+
+    #step1 .design-area{
+        border-top: .1em solid white;
+    }
+
+    #step2 .design-inside{
+        border: .1em solid black;
+    }
+
+    #step2 .design-area{
+        padding: 1em 0;
+        border-top: .1em solid black;
+    }
+
+    #step2 input{
+        margin: 0.5em auto;
+
+    }
+
+    #step3 .design-inside{
+        border: .1em solid white;
+    }
+
+    .textarea{
+        margin: 3em 0;
+        color: black;
+    }
+
+    textarea{
+        resize: none;
+        overflow: hidden;
+    }
+
+    .step-instruct {
+        padding-top: 1em;
+        height: 3em;
+    }
+
+    .design-area{
+        width: 40em;
+        height: 25em;
+    }
+
+    .design-area img{
+        width:100%;
+        height:25em;
+
+    }
+    #upload-img{
+        width:30em;
+        height:20em;   
+    }
+
+    .stepbar{
+        padding: 1em 0;    
+    }
+    .stepbar img{
+        width:30em;
+        height:auto;
+    }
+    .step-button{
+        position: absolute;
+        right: 5%;
+        top: 6em;
+    }
+
+    .step-button a{
+        font-size: 80%;
+    }
+
+
+    /*------------------
+    Mytrip-timeline
+    -------------------*/
+    #timeline{
+        width:50em;
+    }
+
+    #timeline img{
+        width:45em;
+        height:30em;
+    }
+
+    .popup-window .modal-content{
+        max-width: 20em;
+        height: auto;
+        padding: 2em 0 0 0;
+    }
+    
+    #line-for-timeline{
+        font-size: 1.2em;
+    }
+    
+    #line-for-timeline:after {
+        content:"";
+        display: inline-block;
+        height: 0.5em;
+        vertical-align: middle;
+        width: 100%;
+        margin-right: -100%;
+        margin-left: 0.75;
+        border-top: 2px solid #01b6c6;
+    }
+    
+    #line-for-timeline:before {
+        content:"";
+        display: inline-block;
+        height: 0.5em;
+        vertical-align: middle;
+        width: 100%;
+        margin-right: 0.75em;
+        margin-left: -100%;
+        border-top: 2px solid #01b6c6;
+    }
+
+
+}
+
+
+
+
+@media screen 
+and (min-device-width:300px) 
+and (max-device-width:768px) 
+and (-webkit-min-device-pixel-ratio: 2) 
+and (orientation: portrait) {
+    
+     /*------
+    Base styles
+    ---------*/
+
+    body {
+        font-family: 'Asap', sans-serif;
+        margin: 0;
+        padding: 0; 
+        background-color: #b8d6e7;
+
+        /*font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;*/
+    }
+
+    h1, h2, h3, h4 {
+        font-family: 'Asap', sans-serif;
+        color:#2D6662;
+    }
+
+    h1 {
+
+    }
+
+    h2 {
+
+    }
+
+    p {
+
+    }
+
+    a:link {
+        font-family: 'Asap', sans-serif;
+    }
+
+    a:visited {
+
+    }
+
+    a:focus {
+
+    }
+
+    a:hover {
+
+    }
+
+    a:active{
+
+    }
+
+    /*---------------------
+    Layout syles
+    ----------------------*/
+    .nav-bar {
+        font-family: 'Asap', sans-serif;
+        margin-bottom: 5em;
+        height: auto;
+        color: #888F91;
+        background-color: #fff;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999        
+    }
+
+    .content {
+        font-family: 'Asap', sans-serif;
+        padding: .75em 1em;
+        margin: 1.5em 0 0 0;
+        background-color: #b8d6e7;    
+    }
+
+    .footer {
+        font-family: 'Asap', sans-serif;
+        color: #888F91;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .container {
+        font-family: 'Asap', sans-serif;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;  
+    }
+
+    /*-------Green container--------*/
+    .green {
+        background-color: #01b6c6;
+        color: white;   
+    }
+
+    /*-------White container--------*/
+    .white {
+        background-color: white;
+        color:black;
+    }
+
+    /*-------Center div--------*/
+    .center {
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    /*-------Center text--------*/
+    .tcenter {
+        text-align: center;
+    }
+
+    .right{
+        float: right;
+    }
+
+    .left{
+        float: left;
+    }
+
+    /* --------------------
+    Nav-bar
+    -----------------------*/
+    
+    .topnav {
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .topnav a {
+        font-family: 'Asap', sans-serif;
+        font-size: 1.15em;
+        display:inline-block;
+        padding: .7em 1.25em;
+        color: #888F91;
+        text-decoration: none;
+    }
+    
+    .topnav a:not(:first-child) {display: none;}
+    
+    .topnav a.navicon {
+        float: right;
+        display: block;
+    }
+    @media screen 
+        and (min-device-width:300px) 
+        and (max-device-width:768px) 
+        and (-webkit-min-device-pixel-ratio: 2) 
+        and (orientation: portrait) {
+            .topnav.responsive {position: relative;}
+            .topnav.responsive .navicon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+                text-decoration: none;
+            }
+        }
+
+    .topnav a:link {
+
+    }
+
+    .topnav a:visited {
+
+    }
+
+    .topnav a:focus{
+
+    }
+
+    .topnav a:hover {
+
+    }
+
+    .topnav a:active {
+
+    }
+    
+    
+    
+
+    /*-------Logo img on nav-bar --------*/
+    .navbar-brand {
+      padding: 0;
+    }
+
+    .navbar-brand>img {
+      height: 120%;
+      width: auto;
+      vertical-align: middle;
+    }
+
+    /* --------------------
+    Login form styles
+    -----------------------*/
+    form {
+        font-family: 'Asap', sans-serif;
+        border: .25em solid #f1f1f1;
+        padding: .7em 1.25em;
+    }
+
+    input[type=text],input[type=password]{
+        width: 100%;
+        padding: .5em 1em;
+        margin: .25em .1em;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .loginform{
+        padding: .5em 5em;
+    }
+
+    .login button{
+        margin: .5em 3em;
+    }
+
+    .modal {
+        display: none; /*hidden by defaulty*/
+        position: fixed; 
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /*enable scroll if needed*/
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 5em; 
+    }
+
+    .modal-content {
+        max-width: 40em;
+        margin: 5em auto; 
+    }
+
+    .close {
+        position: absolute;
+        right: 2.5em;
+        top: 0;
+        color: #000;
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    .close: hover, .close: focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+
+    /* --------------------
+    Swiper styles
+    -----------------------*/
+    .swiper-wrapper{
+        margin: 1em 0;
+        padding: 1.5em 0;
+    }
+
+    /* --------------------
+    Button styles
+    -----------------------*/
+    .button {
+        margin: .5em 0;
+    }
+
+    .btn{
+        margin: 0.5em 0;
+        background-color: #F0FBFA ;
+        color: #01b6c6;
+        border-color: #222;
+        display: inline-block;
+        padding: .75em 1.5em;
+        margin-bottom: 0;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: .2em;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        color: #fff;
+        background-color: #A9DBE6;
+    }
+
+    .btn:focus {
+
+    }
+
+    .btn:active {
+
+    }
+
+    .icon-style{
+        margin: 0 0.5em;
+    }
+
+    /* --------------------
+    Image styles
+    -----------------------*/
+    .img-responsive { max-width: 100%; }
+
+    img {
+        text-align: center; 
+    }
+
+    .imgcontainer {
+        text-align: center;
+        position: relative;
+    }
+
+    .imgSize280 {
+            text-align: center;
+            width: 70em;
+            border: 0.125em solid white;
+            box-shadow: 0em 0.125em 0.25em rgba(205, 205, 205, 0.7);
+            -moz-box-shadow: 0em 0.125em 0.25em rgba(205, 205, 205, 0.7);
+            -webkit-box-shadow: 0em 0.125em 0.25em rgba(205, 205, 205, 0.7);
+    }
+
+    /* --------------------
+    Popular works styles
+    -----------------------*/
+    
+
+    #popular-works{   
+        height: 15em;
+        vertical-align: middle;
+        margin: 1em auto;
+    }
+
+    .diary-display{ padding: 1em;}
+
+    .photo {
+        width: 40%;
+        height: 12em;
+        float: left;
+    }
+
+    .photo>img{
+        width:100%;
+        height: 12em;    
+    }
+
+    .diary {
+        width:60%;
+        height: inherit;
+        float:right;
+        display: inline-block;
+    }
+    .diary h5, p{
+        font-size: 50%;
+    }
+
+    .location {
+        display: block;
+        float: right;  
+    }
+
+    .title {
+        padding: 0 1.25em;
+        width:100%;
+        display: block;
+        clear:both;
+    }
+
+    .author-date{
+        padding: 0 1.25em;
+        display: block;
+        float:left;
+        font-style: italic;
+        font-size: 50%; 
+    }
+
+    .text{
+        font-size: 50%;
+        padding: 0 1.25em;
+        width:100%;
+        white-space: normal;
+        word-wrap: break-word;
+        display: block;
+        clear:both;      
+    }
+
+    .vote-like{
+        display: block;
+        clear: both;
+        text-align: center;
+    }
+
+    .vote-like span{
+        margin: .25em 1em;
+    }
+
+    /* --------------------
+    Start to design diary styles
+    -----------------------*/
+    .design-form {
+	   border: none;
+    }
+    
+    .progress-bar{
+        text-align: center;
+    }
+
+    .progress-bar img{
+        width:100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .design-outside{
+        width: 100%;
+        padding: 1em 0;
+        position: relative;
+    } 
+    
+    .desgin-outside h3, p { font-size: 80%}
+
+    .design-inside{
+        width:100%;
+        height:18em;
+    }
+
+    #step1 .design-inside{
+        border: .1em solid white;
+    }
+
+    #step1 .design-area{
+        border-top: .1em solid white;
+    }
+
+    #step2 .design-inside{
+        border: .1em solid black;
+    }
+
+    #step2 .design-area{
+        padding: 1em 0;
+        border-top: .1em solid black;
+    }
+
+    #step2 input{
+        margin: 1em auto;
+
+    }
+
+    #step3 .design-inside{
+        border: .1em solid white;
+    }
+
+    .textarea{
+        padding: 1em 0;
+        width: 80%;
+        color: black;
+        
+    }
+    
+    .textarea-small{
+        height: 2em;
+    }
+    
+    .textarea-large{
+        height:10em;
+    }
+
+    textarea{
+        color: black;
+        width:15em;
+        resize: none;
+        overflow: hidden;
+    }
+    
+
+    .step-instruct {
+        padding-top: 1em;
+        height: 3em;
+    }
+
+    .design-area{
+        width: 100%;
+        height: 15em;
+    }
+
+    .design-area img{
+        width:100%;
+        height:15em;
+
+    }
+    #upload-img{
+        width:100%;
+        height:10em;   
+    }
+
+    .stepbar{
+        padding: 1em 0;    
+    }
+    .stepbar img{
+        width:30em;
+        height:auto;
+    }
+   
+
+
+    /*------------------
+    Mytrip-timeline
+    -------------------*/
+    #timeline{
+        width:100%;
+        height: 18em;
+    }
+
+    #timeline img{
+        width:80%;
+        height:15em;
+    }
+
+    .popup-window .modal-content{
+        max-width: 20em;
+        height: auto;
+        padding: 2em 0 0 0;
+    }
+    
+    #line-for-timeline{
+        font-size: .75em;
+    }
+    
+    #line-for-timeline:after {
+        content:"";
+        display: inline-block;
+        height: 0.5em;
+        vertical-align: middle;
+        width: 100%;
+        margin-right: -100%;
+        margin-left: 0.75;
+        border-top: 2px solid #01b6c6;
+    }
+    
+    #line-for-timeline:before {
+        content:"";
+        display: inline-block;
+        height: 0.5em;
+        vertical-align: middle;
+        width: 100%;
+        margin-right: 0.75em;
+        margin-left: -100%;
+        border-top: 2px solid #01b6c6;
+    }
+	
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .navicon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
+
