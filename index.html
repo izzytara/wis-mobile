@@ -29,30 +29,8 @@
             <div class="container">               
                 <div class="topnav nav" id="myTopnav">
                     <a class="navbar-brand" href="index.php"><img src="img/LOGO.png" alt="Traval Diary logo"></a>
-                    <a class="left" href="explore.php">EXPLORE</a>
-                    <a class="left" href="mytrip.php">MY TRAVEL</a>
-                    <a class="left" href="#app">APP</a>
-                    <a class="left" href="#aboutus">ABOUT US</a>                   
+                    <a class="left" href="explore_mobile.html">EXPLORE</a>                  
                     <a class="right" href="#">LANGUAGE</a>
-                        <!--<li class="right"><a href="#"><span class="glyphicon glyphicon-list"></span></a> -->
-                        
-                        <!--If user has not loged in-->
-                    
-                        <?php
-                            session_start();
-                            if(!$_SESSION['auth']){
-                        ?>                               
-                            <a class="right" href="#" onclick="document.getElementById('userlogin').style.display='block'">LOGIN</a>                       
-                        <!--If user has not loged in-->
-                        <?php
-                            }else if($_SESSION['auth']){
-                        ?>                                      
-                            <a class="right" href="logout.php">LOGOUT</a>                                                                                 
-                        <?php
-                            }
-                        ?>                                               
-                        
-                    
                     <a href="javascript:void(0);" style="font-size:1em;" class="navicon" onclick="myFunction()">&#9776;</a>
                 </div>
             </div>
@@ -68,32 +46,6 @@
                 }
             }
         </script>
-
-    
-    
-    
-        
-    <!--Here is the login form-->
-        <div id="userlogin" class="modal">
-            <div class="login">
-                <form class="modal-content animate" action="login.php" method="post">
-                    <h2 class="tcenter">Login</h2>
-
-                        <div class="loginform center">
-                            <label><b>Username</b></label>
-                            <br>
-                            <input class="center" type="text" placeholder="Enter username" name="username" required>
-                            <br>
-                            <label><b>Password</b></label>
-                            <br>
-                            <input class=" center" type="password" placeholder="Enter password" name="password" required>
-                            <br>
-                        </div>
-                        <p class="tcenter"><button class="btn" type="submit" name="signup">Sign up</button><button class="btn" type="submit" name="login">Log in</button></p>
-                    
-                </form>
-            </div>
-        </div>
 
     <!--Here is the content-->
         <div class="content">
@@ -117,44 +69,6 @@
                     </p>
                 </div>
             </div>
-   
-        
-    
-    <!--Here is popular works display container
-        <div id="popular-works" class="container white">
-            <div class="diary-display">
-                <div class="photo">
-                    <img class="img-responsive" src="img/test-photo.jpg" alt="placeholder">
-                </div>
-                <div class="diary">
-                    <div class="location">
-                        <p>
-                            <span class="glyphicon glyphicon-map-marker"></span>
-                            <span>Locatoin</span>
-                        </p>
-                    </div>                    
-                    <div class="title">
-                        <p>Title: <span>My First Trip at Thailand</span></p>
-                    </div>
-                    
-                    <div class="author-date">
-                        <p>By:<span>Amy</span>Date:<span>2017-05-23</span></p>
-                    </div>
-                    
-                    <div class="text">
-                        <p>For our last two night.......</p>
-                    </div>                
-                </div>                           
-            </div>
-
-            <div class="vote-like">
-                    <p>
-                        <a href="#"><span class="glyphicon glyphicon-heart"></span></a>
-                        <a href="#"><span>369</span>Like</a>
-                        <a href="#"><span class="glyphicon glyphicon-share"></span></a>   
-                    </p>  
-            </div>
-        </div>-->
 
     <!--Here is the first display container-->
         <div class="container green">
@@ -208,17 +122,6 @@
             spaceBetween: 30,
             loop: true
         });
-        </script>
-        
-        <script>
-    //get the modal
-            var modal = document.getElementById('userlogin');
-    //when the user clicks anywhere out side the modal, close it
-            window.onclick = function(event){
-                if (event.target == modal){
-                modal.style.display = "none";
-            }
-        }
         </script>
 
 	</body>
