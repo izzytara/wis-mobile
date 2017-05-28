@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Link Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.css">
+        
+    <!-- Link Bootstrap's CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- Link Bootstrap's js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Link Siper's js-->
+    <script src="js/swiper.js"></script>
+</head>
+<body>
+    
+    <!--Here is the home page-->
+    <div data-role="page" id="home">
+
+        <div data-role="panel" id="panel" data-position="right" data-theme="f" data-display="push">
+            <div class="ui-panel-inner">
+                <ul data-role="listview" class="ui-listview">
+                    <li data-icon="false" ><a href="#explore" class="ui-btn">Explore</a></li>
+                    <li data-icon="false" ><a href="#design" class="ui-btn">Design</a></li>
+                    <li data-icon="false" ><a href="#aboutus" class="ui-btn">About Us</a></li>
+                </ul> 
+            </div>
+        </div>
+
+        <div data-role="header" data-theme="f">
+            <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#home">Home</a> 
+            <h1>Travel Diary</h1>
+            <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+        </div>
+
+        <div data-role="content" role="main">      
+        <fieldset>
+                <!-- Swiper -->
+                <div class="swiper-container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="img-responsive center" src="img/sample.jpg" alt="test1"/></div>
+                        <div class="swiper-slide"><img class="img-responsive center" src="img/Topadvertising.jpg" alt="test1"/></div>
+                        <div class="swiper-slide"><img class="img-responsive center" src="img/Topadvertising3.jpg" alt="test1"/></div>
+                    </div>
+    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+               </div> 
+            
+        </fieldset> 
+      
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-solo">
+                <button data-icon="flat-new" data-theme="f" onclick="location.href='#design'">Start Your Diary</button>
+            </div>
+            
+        </fieldset>
+        
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-solo"><p>   
+                <div class="container green">
+                    <p>
+                        <img class="img-responsive center" src="img/step1.png" alt="Step 1 choose your location"/>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="ui-block-solo">
+                
+                <div class="container white">
+                    <p>
+                        <img class="img-responsive center" src="img/step2.png" alt="Step 2 Upload your pictures"/>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="ui-block-solo">  
+                <div class="container green">
+                    <p>
+                        <img class="img-responsive center" src="img/step3.png" alt="Step 3 My Blog Post"/>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-solo">   
+                <div class="container white">
+                    <p>
+                        <img class="img-responsive center" src="img/advertisinglastpicture.png" alt="app promotion picture"/>
+                    </p>
+                </div>
+            </div>         
+        </fieldset>
+      
+    </div>
+    </div>
+    <!--Here is the explore page-->
+    <div data-role="page" id="explore">
+
+        <div data-role="panel" id="panel" data-position="right" data-theme="f" data-display="push">
+            <div class="ui-panel-inner">
+                <ul data-role="listview" class="ui-listview">
+                    <li data-icon="false" ><a href="#explore" class="ui-btn">Explore</a></li>
+                    <li data-icon="false" ><a href="#design" class="ui-btn">Design</a></li>
+                    <li data-icon="false" ><a href="#aboutus" class="ui-btn">About Us</a></li>
+                </ul> 
+            </div>
+        </div>
+
+        <div data-role="header" data-theme="f">
+            <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#home">Home</a> 
+            <h1>Explore</h1>
+            <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+        </div>
+
+        <div data-role="content" role="main">                
+            <fieldset>
+                <!--Get All stroies, sorted by popular-->
+                <div id="popular-works" class="container white center">
+                    <div class="diary-display">
+                        <div class="photo">
+                            <img class="img-responsive" src="<?php echo $popular1[image_URL];?>" id="<?php echo $popular1[storyid];?>" alt="placeholder">
+                        </div>
+                        <div class="diary">
+                            <div class="location">
+                                <p>
+                                    <span class="glyphicon glyphicon-map-marker"></span>
+                                    <span><?php echo $popular1[location];?></span>
+                                </p>
+                            </div>                    
+                            <div class="title">
+                                <h2>Title: <span><?php echo $popular1[title];?></span></h2>
+                            </div>
+                            <!--Get author name from uid-->
+                            <?php
+                            $findunamebyuid = "SELECT uname FROM travel_user WHERE uid= '$popular1[uid]'";
+                            $nameres = mysqli_query($connect, $findunamebyuid);
+                            $nameres1 = mysqli_fetch_assoc($nameres);
+                            ?>
+                            <div class="author-date">
+                                <p>By:&nbsp;<span><?php if($nameres1[uname]){echo $nameres1[uname];}elseif($nameres1[uname] == null){echo "****";}?></span>&nbsp;Date: <span><?php echo $popular1[update_time];?></span></p>
+                            </div>
+                    
+                            <div class="text">
+                                <p><?php echo $popular1[story];?></p>
+                            </div>                
+                        </div>                           
+                    </div>
+                </div>
+            </fieldset>           
+        </div>
+    </div>
+    
+    <!--Here is the design page-->
+    <div data-role="page" id="design">
+
+        <div data-role="panel" id="panel" data-position="right" data-theme="f" data-display="push">
+            <div class="ui-panel-inner">
+                <ul data-role="listview" class="ui-listview">
+                    <li data-icon="false" ><a href="#explore" class="ui-btn">Explore</a></li>
+                    <li data-icon="false" ><a href="#design" class="ui-btn">Design</a></li>
+                    <li data-icon="false" ><a href="#aboutus" class="ui-btn">About Us</a></li>
+                </ul> 
+            </div>
+        </div>
+
+        <div data-role="header" data-theme="f">
+            <a href="#home" data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a> 
+            <h1>Design</h1>
+            <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+        </div>
+
+        <div data-role="content" role="main">        
+            <div data-role="collapsible-set" data-theme="f" data-content-theme="f">
+
+                <div data-role="collapsible" data-collapsed-icon="flat-location" data-expanded-icon="flat-cross" data-collapsed="false">
+                    
+                    <h3>Step 1 - choose location</h3>
+                    <div id="step1" class="container green">
+                <div class="design-outside">
+                    <h3 class="tcenter lang" key="location">1. Choose Location</h3>
+                    <div class="design-inside center">
+
+                        <div class="step-instruct"><p class="tcenter lang" key="map">Please chick you current location from the Google Map</p></div>
+                        <div id="map" class="design-area"></div>
+                        <!--map api-->
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM4uETuyFU5KzjRyn1-aZYy-xnH6jJwzg&callback=myMap" type="text/javascript"></script>
+                        <!--Get location POST-->
+                        <input id="location" name="location" style="color:black" type="hidden">
+                        
+                    </div>
+                    
+
+                </div>
+            </div>
+                    
+
+                    
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="flat-camera" data-expanded-icon="flat-cross">
+                    <h3>Step 2 - upload picture</h3>
+                    
+                    <div id="step2" class="container white">
+                <div class="design-outside">
+                    <h3 class="tcenter lang" key="upload">2. Upload Your Pictures</h3>
+                    <div class="design-inside center">
+
+                        <div class="step-instruct"><p class="tcenter lang" key="choose">Please choose your photograph from your mobile or computer</p></div>
+
+
+                        <div class="design-area">
+                            <img id="upload-img" class="img-responsive center" src="img/upload%20image.png" alt="upload photo"/>
+                            <p class="tcenter"><input type="file" name="file" id="file"/></p>
+                        </div>              
+                    </div>    
+                </div>
+            </div>
+                    
+                    
+                   
+                </div>   
+                <div data-role="collapsible" data-collapsed-icon="flat-new" data-expanded-icon="flat-cross">         
+                    <h3>Step 3 - write diary</h3>
+                    
+                     <div id="step3" class="container green">
+                <div class="design-outside">
+                    <h3 class="tcenter lang" key="blog">3. My Blog Post</h3>
+                    <div class="design-inside center">
+                        <div class="design-area textarea center">
+                            <textarea class="center textarea-small" name="title" placeholder="Write your title here." required></textarea>
+                            <br>
+                            <textarea class="center textarea-large" name="story" placeholder="Write in your journal here." required></textarea>
+                            <p class="tcenter"><button class="btn lang" key="done" type="submit">Done</button></p>
+                        </div>
+
+                    </div>
+                   
+
+                </div>
+            </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <input type="text" placeholder="Text Input" />
+        </div>
+    </div>
+    
+    <div data-role="page" id="aboutus">
+
+    <div data-role="panel" id="panel" data-position="right" data-theme="f" data-display="push">
+        <div class="ui-panel-inner">
+            <ul data-role="listview" class="ui-listview">
+                <li data-icon="false" ><a href="#explore" class="ui-btn">Explore</a></li>
+                <li data-icon="false" ><a href="#design" class="ui-btn">Design</a></li>
+                <li data-icon="false" ><a href="#aboutus" class="ui-btn">About Us</a></li>
+            </ul> 
+        </div>
+    </div>
+
+    <div data-role="header" data-theme="f">
+        <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#home">Home</a> 
+        <h1>About Us</h1>
+        <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+    </div>
+
+    <div data-role="content" role="main">              
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-solo">   
+                <img class="img-responsive img1" src="img/about%20us4.jpg" alt="about us title">
+                <img class="img-responsive img2" src="img/about%20us5.jpg" alt="about us">
+                <img class="img-responsive img3" src="img/about%20us1-2.jpg" alt="Yi Fengji's profile">
+                <img class="img-responsive img4" src="img/about%20us2-2.jpg" alt="Jing Zhang's profile">
+                <img class="img-responsive img5" src="img/about%20us3-2.jpg" alt="Wei Fu's profile">
+            </div>
+        </fieldset>   
+    </div>
+  </div>
+   
+    
+  
+  
+     <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 2,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true
+        });
+        </script>
+</body>
+</html>
