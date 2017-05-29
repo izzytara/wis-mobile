@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
   <script src="js/jquery.js"></script>
   <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobilemain.css">
     <!-- Link Google font -->
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
 
@@ -22,7 +22,6 @@
     <script src="js/swiper.js"></script>
 </head>
 <body>
-    
     <!--Here is the home page-->
     <div data-role="page" id="home">
 
@@ -43,64 +42,71 @@
         </div>
 
         <div data-role="content" role="main">      
-        <fieldset>
-                <!-- Swiper -->
-                <div class="swiper-container swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img class="img-responsive center" src="img/sample.jpg" alt="test1"/></div>
-                        <div class="swiper-slide"><img class="img-responsive center" src="img/Topadvertising.jpg" alt="test1"/></div>
-                        <div class="swiper-slide"><img class="img-responsive center" src="img/Topadvertising3.jpg" alt="test1"/></div>
+            <fieldset>
+                    <!-- Swiper -->
+                    <div class="swiper-container swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img class="img-responsive center" src="img/sample.jpg" alt="test1"/></div>
+                            <div class="swiper-slide"><img class="img-responsive center" src="img/Topadvertising.jpg" alt="test1"/></div>
+                            <div class="swiper-slide"><img class="img-responsive center" src="img/Topadvertising3.jpg" alt="test1"/></div>
+                        </div>
+        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                   </div> 
+
+            </fieldset> 
+
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-solo">
+                    <button data-icon="flat-new" data-theme="f" onclick="location.href='#design'">Start Your Diary</button>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-solo"><p>   
+                    <div class="container green">
+                        <p>
+                            <img class="img-responsive center" src="img/step1.png" alt="Step 1 choose your location"/>
+                        </p>
                     </div>
-    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-               </div> 
-            
-        </fieldset> 
-      
-        <fieldset class="ui-grid-a">
-            <div class="ui-block-solo">
-                <button data-icon="flat-new" data-theme="f" onclick="location.href='#design'">Start Your Diary</button>
-            </div>
-            
-        </fieldset>
-        
-        <fieldset class="ui-grid-a">
-            <div class="ui-block-solo"><p>   
-                <div class="container green">
-                    <p>
-                        <img class="img-responsive center" src="img/step1.png" alt="Step 1 choose your location"/>
-                    </p>
                 </div>
-            </div>
-            
-            <div class="ui-block-solo">
-                
-                <div class="container white">
-                    <p>
-                        <img class="img-responsive center" src="img/step2.png" alt="Step 2 Upload your pictures"/>
-                    </p>
+
+                <div class="ui-block-solo">
+
+                    <div class="container white">
+                        <p>
+                            <img class="img-responsive center" src="img/step2.png" alt="Step 2 Upload your pictures"/>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="ui-block-solo">  
-                <div class="container green">
-                    <p>
-                        <img class="img-responsive center" src="img/step3.png" alt="Step 3 My Blog Post"/>
-                    </p>
+
+                <div class="ui-block-solo">  
+                    <div class="container green">
+                        <p>
+                            <img class="img-responsive center" src="img/step3.png" alt="Step 3 My Blog Post"/>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="ui-block-solo">   
-                <div class="container white">
-                    <p>
-                        <img class="img-responsive center" src="img/advertisinglastpicture.png" alt="app promotion picture"/>
-                    </p>
-                </div>
-            </div>         
-        </fieldset>
-      
-    </div>
+                <div class="ui-block-solo">   
+                    <div class="container white">
+                        <p>
+                            <img class="img-responsive center" src="img/advertisinglastpicture.png" alt="app promotion picture"/>
+                        </p>
+                    </div>
+                </div>         
+            </fieldset>
+        </div>
     </div>
     <!--Here is the explore page-->
+    <script>
+      $.getJSON("https://infs3202-d1sr7.uqcloud.net/mobile-explore.php",function(result){
+        $.each(result, function(i, field){
+           //$(".diary-display img").attr("src", field.image_URL);
+           $(".show").append("<h3 class='ui-block-solo'>Title:"+ field.title+ "</h3><p class='ui-block-solo'><span class='mobile-location' data-icon='flat-location'> @ "+ field.location+"</span><span class='mobile-date' data-icon='flat-time'>Date: "+field.update_time+"</span></p><img class='ui-block-solo img-responsive' src=" + field.image_URL + " alt='placeholder'><p class='ui-block-solo'>"+field.story+"</p>");
+        });
+      });
+    </script> 
     <div data-role="page" id="explore">
 
         <div data-role="panel" id="panel" data-position="right" data-theme="f" data-display="push">
@@ -120,39 +126,8 @@
         </div>
 
         <div data-role="content" role="main">                
-            <fieldset>
+            <fieldset class="show">
                 <!--Get All stroies, sorted by popular-->
-                <div id="popular-works" class="container white center">
-                    <div class="diary-display">
-                        <div class="photo">
-                            <img class="img-responsive" src="<?php echo $popular1[image_URL];?>" id="<?php echo $popular1[storyid];?>" alt="placeholder">
-                        </div>
-                        <div class="diary">
-                            <div class="location">
-                                <p>
-                                    <span class="glyphicon glyphicon-map-marker"></span>
-                                    <span><?php echo $popular1[location];?></span>
-                                </p>
-                            </div>                    
-                            <div class="title">
-                                <h2>Title: <span><?php echo $popular1[title];?></span></h2>
-                            </div>
-                            <!--Get author name from uid-->
-                            <?php
-                            $findunamebyuid = "SELECT uname FROM travel_user WHERE uid= '$popular1[uid]'";
-                            $nameres = mysqli_query($connect, $findunamebyuid);
-                            $nameres1 = mysqli_fetch_assoc($nameres);
-                            ?>
-                            <div class="author-date">
-                                <p>By:&nbsp;<span><?php if($nameres1[uname]){echo $nameres1[uname];}elseif($nameres1[uname] == null){echo "****";}?></span>&nbsp;Date: <span><?php echo $popular1[update_time];?></span></p>
-                            </div>
-                    
-                            <div class="text">
-                                <p><?php echo $popular1[story];?></p>
-                            </div>                
-                        </div>                           
-                    </div>
-                </div>
             </fieldset>           
         </div>
     </div>
@@ -178,7 +153,6 @@
 
         <div data-role="content" role="main">        
             <div data-role="collapsible-set" data-theme="f" data-content-theme="f">
-
                 <div data-role="collapsible" data-collapsed-icon="flat-location" data-expanded-icon="flat-cross" data-collapsed="false">
                     
                     <h3>Step 1 - choose location</h3>
@@ -192,16 +166,10 @@
                         <!--map api-->
                         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM4uETuyFU5KzjRyn1-aZYy-xnH6jJwzg&callback=myMap" type="text/javascript"></script>
                         <!--Get location POST-->
-                        <input id="location" name="location" style="color:black" type="hidden">
-                        
+                        <input id="location" name="location" style="color:black" type="hidden">         
                     </div>
-                    
-
                 </div>
-            </div>
-                    
-
-                    
+            </div>  
                 </div>
                 <div data-role="collapsible" data-collapsed-icon="flat-camera" data-expanded-icon="flat-cross">
                     <h3>Step 2 - upload picture</h3>
@@ -220,15 +188,11 @@
                         </div>              
                     </div>    
                 </div>
-            </div>
-                    
-                    
-                   
+            </div> 
                 </div>   
                 <div data-role="collapsible" data-collapsed-icon="flat-new" data-expanded-icon="flat-cross">         
-                    <h3>Step 3 - write diary</h3>
-                    
-                     <div id="step3" class="container green">
+                    <h3>Step 3 - write diary</h3>  
+                    <div id="step3" class="container green">
                 <div class="design-outside">
                     <h3 class="tcenter lang" key="blog">3. My Blog Post</h3>
                     <div class="design-inside center">
@@ -238,54 +202,44 @@
                             <textarea class="center textarea-large" name="story" placeholder="Write in your journal here." required></textarea>
                             <p class="tcenter"><button class="btn lang" key="done" type="submit">Done</button></p>
                         </div>
-
                     </div>
-                   
-
                 </div>
             </div>
-                    
-                    
-                    
                 </div>
             </div>
-            <input type="text" placeholder="Text Input" />
         </div>
     </div>
     
+    <!--Here is the about us page-->
     <div data-role="page" id="aboutus">
+        <div data-role="panel" id="panel" data-position="right" data-theme="f" data-display="push">
+            <div class="ui-panel-inner">
+                <ul data-role="listview" class="ui-listview">
+                    <li data-icon="false" ><a href="#explore" class="ui-btn">Explore</a></li>
+                    <li data-icon="false" ><a href="#design" class="ui-btn">Design</a></li>
+                    <li data-icon="false" ><a href="#aboutus" class="ui-btn">About Us</a></li>
+                </ul> 
+            </div>
+        </div>
 
-    <div data-role="panel" id="panel" data-position="right" data-theme="f" data-display="push">
-        <div class="ui-panel-inner">
-            <ul data-role="listview" class="ui-listview">
-                <li data-icon="false" ><a href="#explore" class="ui-btn">Explore</a></li>
-                <li data-icon="false" ><a href="#design" class="ui-btn">Design</a></li>
-                <li data-icon="false" ><a href="#aboutus" class="ui-btn">About Us</a></li>
-            </ul> 
+        <div data-role="header" data-theme="f">
+            <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#home">Home</a> 
+            <h1>About Us</h1>
+            <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+        </div>
+
+        <div data-role="content" role="main">              
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-solo">   
+                    <img class="img-responsive img1" src="img/about%20us4.jpg" alt="about us title">
+                    <img class="img-responsive img2" src="img/about%20us5.jpg" alt="about us">
+                    <img class="img-responsive img3" src="img/about%20us1-2.jpg" alt="Yi Fengji's profile">
+                    <img class="img-responsive img4" src="img/about%20us2-2.jpg" alt="Jing Zhang's profile">
+                    <img class="img-responsive img5" src="img/about%20us3-2.jpg" alt="Wei Fu's profile">
+                </div>
+            </fieldset>   
         </div>
     </div>
-
-    <div data-role="header" data-theme="f">
-        <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#home">Home</a> 
-        <h1>About Us</h1>
-        <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
-    </div>
-
-    <div data-role="content" role="main">              
-        <fieldset class="ui-grid-a">
-            <div class="ui-block-solo">   
-                <img class="img-responsive img1" src="img/about%20us4.jpg" alt="about us title">
-                <img class="img-responsive img2" src="img/about%20us5.jpg" alt="about us">
-                <img class="img-responsive img3" src="img/about%20us1-2.jpg" alt="Yi Fengji's profile">
-                <img class="img-responsive img4" src="img/about%20us2-2.jpg" alt="Jing Zhang's profile">
-                <img class="img-responsive img5" src="img/about%20us3-2.jpg" alt="Wei Fu's profile">
-            </div>
-        </fieldset>   
-    </div>
-  </div>
-   
-    
-  
   
      <!-- Initialize Swiper -->
         <script>
@@ -293,7 +247,7 @@
             pagination: '.swiper-pagination',
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
-            slidesPerView: 2,
+            slidesPerView: 1,
             paginationClickable: true,
             spaceBetween: 30,
             loop: true
